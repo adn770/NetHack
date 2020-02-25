@@ -180,7 +180,7 @@ curses_init_nhwindows(int *argcp UNUSED,
     orig_cursor = curs_set(0);
     keypad(stdscr, TRUE);
 #ifdef NCURSES_VERSION
-# ifdef __APPLE__
+# if defined(__APPLE__) || defined(BUILD_MAEMO)
     ESCDELAY = 25;
 # else
     set_escdelay(25);

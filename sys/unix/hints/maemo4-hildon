@@ -1,0 +1,53 @@
+#
+# NetHack 3.6  linux $NHDT-Date: 1432512814 2015/05/25 00:13:34 $  $NHDT-Branch: master $:$NHDT-Revision: 1.12 $
+# Copyright (c) Kenneth Lorber, Kensington, Maryland, 2007.
+# NetHack may be freely redistributed.  See license for details.
+#
+#-PRE
+# Linux hints file
+# This hints file provides a single-user tty build for Linux, specifically
+# for Ubuntu dapper.
+
+PREFIX:=/usr
+HACKDIR=$(PREFIX)/lib/games/$(GAME)
+SHELLDIR=$(PREFIX)
+INSTDIR=$(HACKDIR)
+VARDIR=$(HACKDIR)
+
+POSTINSTALL=cp sys/unix/sysconf.maemo4 $(INSTDIR)/sysconf; $(CHOWN) $(GAMEUID) $(INSTDIR)/sysconf; $(CHGRP) $(GAMEGRP) $(INSTDIR)/sysconf; chmod $(VARFILEPERM) $(INSTDIR)/sysconf; cp win/gtk2/resources/* $(INSTDIR)
+
+CFLAGS=-O2 -I../include -DNOTPARMDECL
+CFLAGS+=-DDLB
+CFLAGS+=-DCOMPRESS=\"/bin/gzip\" -DCOMPRESS_EXTENSION=\".gz\"
+CFLAGS+=-DVAR_PLAYGROUND=\"$(VARDIR)\"
+CFLAGS+=-DSYSCF -DSYSCF_FILE=\"$(HACKDIR)/sysconf\" -DSECURE
+CFLAGS+=-DTIMED_DELAY
+CFLAGS+=-DHACKDIR=\"$(HACKDIR)\"
+CFLAGS+=-DDUMPLOG
+CFLAGS+=-DCONFIG_ERROR_SECURE=FALSE
+CFLAGS+=-DBUILD_MAEMO -DHILDON -DMAEMO4
+CFLAGS+=-DGTK2_GRAPHICS -DDEFAULT_WINDOW_SYS=\"Gtk2\" -DNOTTYGRAPHICS
+CFLAGS+=-DSCORE_ON_BOTL
+
+#CFLAGS+=-DEXTRA_SANITY_CHECKS
+#CFLAGS+=-DEDIT_GETLIN
+#CFLAGS+=-DSCORE_ON_BOTL
+#CFLAGS+=-DMSGHANDLER
+#CFLAGS+=-DTTY_TILES_ESCCODES
+
+LINK=$(CC)
+# Only needed for GLIBC stack trace:
+LFLAGS=-rdynamic
+
+# Only used for the Gtk2 interface.
+GTK2INC = $(shell pkg-config gtk+-2.0 hildon-1 libosso dbus-1 --cflags)
+WINSRC = $(WINGTK2SRC)
+WINOBJ = $(WINGTK2OBJ)
+WINLIB = $(shell pkg-config gtk+-2.0 hildon-1 libosso dbus-1 --libs)
+
+CHOWN=true
+CHGRP=true
+
+VARDIRPERM = 0755
+VARFILEPERM = 0600
+GAMEPERM = 0755

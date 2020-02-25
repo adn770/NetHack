@@ -108,6 +108,15 @@
 #endif
 #endif
 
+#ifdef GTK2_GRAPHICS
+#define USE_XPM           /* Use XPM format for images (required) */
+#define GRAPHIC_TOMBSTONE /* Use graphical tombstone (rip.ppm) */
+#ifndef DEFAULT_WINDOW_SYS
+#define DEFAULT_WINDOW_SYS "Gtk2"
+#endif
+#define ENABLE_NLS        /* Use translated gui strings */
+#endif
+
 #ifdef MSWIN_GRAPHICS
 #ifndef DEFAULT_WINDOW_SYS
 #define DEFAULT_WINDOW_SYS "mswin"

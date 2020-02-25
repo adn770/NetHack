@@ -41,6 +41,9 @@ extern struct window_procs win32_procs;
 #include "winGnome.h"
 extern struct window_procs Gnome_procs;
 #endif
+#ifdef GTK2_GRAPHICS
+extern struct window_procs Gtk2_procs;
+#endif
 #ifdef MSWIN_GRAPHICS
 extern struct window_procs mswin_procs;
 #endif
@@ -124,6 +127,9 @@ static struct win_choices {
 #endif
 #ifdef GNOME_GRAPHICS
     { &Gnome_procs, 0 CHAINR(0) },
+#endif
+#ifdef GTK2_GRAPHICS
+    { &Gtk2_procs, 0 },
 #endif
 #ifdef MSWIN_GRAPHICS
     { &mswin_procs, 0 CHAINR(0) },

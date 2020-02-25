@@ -1740,6 +1740,9 @@ static struct win_info window_opts[] = {
 #ifdef GNOME_GRAPHICS /* unmaintained/defunct */
     { "Gnome", "Gnome" },
 #endif
+#ifdef GTK2_GRAPHICS /* unmaintained/defunct */
+    { "Gtk2", "Gtk2" },
+#endif
 #ifdef MAC /* defunct OS 9 interface */
     { "mac", "Mac" },
 #endif

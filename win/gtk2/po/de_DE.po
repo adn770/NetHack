@@ -1,0 +1,710 @@
+# German translations for gtk package
+# German messages for gtk.
+# Copyright (C) 2004 THE gtk'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gtk package.
+# Automatically generated, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gtk 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-12-31 15:05+0100\n"
+"PO-Revision-Date: 2004-07-19 17:21+0200\n"
+"Last-Translator: Mihael Vrbanec\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: g2player.c:444
+msgid "<b><big>Create your character:</big></b>"
+msgstr "<b><big>Erstellen Sie Ihren Charakter:</big></b>"
+
+#: g2player.c:396
+msgid "<b>Choose alignment:</b>"
+msgstr "<b>Gesinnung wählen:</b>"
+
+#: g2player.c:453
+msgid "<b>Choose race:</b>"
+msgstr "<b>Rasse wählen:</b>"
+
+#: g2player.c:450
+msgid "<b>Choose role:</b>"
+msgstr "<b>Rolle wählen:</b>"
+
+#: g2player.c:368
+msgid "<b>Choose sex:</b>"
+msgstr "<b>Geschlecht wählen:</b>"
+
+#: g2status.c:664
+msgid "AC: "
+msgstr "RK: "
+
+#: g2status.c:435
+#, c-format
+msgid "AC: %d"
+msgstr "RK: %d"
+
+#: g2main.c:71 g2main.c:282
+msgid "About Gtk2Hack"
+msgstr "Über Gtk2Hack"
+
+#: g2main.c:114
+msgid "Adjust letters"
+msgstr "Buchstaben anpassen"
+
+#: g2status.c:890
+msgid "Adventurer's Name"
+msgstr "Name des Abenteurers"
+
+#: g2status.c:596
+msgid "Alignment"
+msgstr "Gesinnung"
+
+#: g2main.c:64
+msgid "Appa_rel"
+msgstr "Bekleidung"
+
+#: g2main.c:86
+msgid "Apply"
+msgstr "Anwenden"
+
+#: g2status.c:733
+msgid "Approximate score"
+msgstr "Punktzahl"
+
+#: g2status.c:667
+msgid "Armor Class"
+msgstr "Rüstungsklasse"
+
+#: g2main.c:83
+msgid "Attack <direction>"
+msgstr "Angreifen <Richtung>"
+
+#: g2status.c:28
+msgid "Blind"
+msgstr "Blind"
+
+#: g2status.c:46
+msgid "Burdened"
+msgstr "belastet"
+
+#: g2menu.c:249
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: g2main.c:112
+msgid "Cast a spell"
+msgstr "Zaubern"
+
+#: g2status.c:426
+#, c-format
+msgid "Cha: %d"
+msgstr "Cha: %d"
+
+#: g2status.c:711
+msgid "Cha: 9999"
+msgstr "Cha: 9999"
+
+#: g2player.c:413 g2status.c:23
+msgid "Chaotic"
+msgstr "chaotisch"
+
+#: g2status.c:894
+msgid "Character rame and rank"
+msgstr "Charaktername und Rang"
+
+#: g2status.c:711
+msgid "Charisma"
+msgstr "Charisma"
+
+#: g2main.c:115
+msgid "Chat"
+msgstr "Reden"
+
+#: g2main.c:87
+msgid "Close"
+msgstr "Schließen"
+
+#: g2status.c:417
+#, c-format
+msgid "Con: %d"
+msgstr "Kon: %d"
+
+#: g2status.c:709
+msgid "Con: 9999"
+msgstr "Kon: 9999"
+
+#: g2status.c:30
+msgid "Confused"
+msgstr "Verwirrt"
+
+#: g2status.c:709
+msgid "Constitution"
+msgstr "Konstitution"
+
+#: g2main.c:299
+msgid "Credits"
+msgstr "Danksagungen"
+
+#: g2status.c:626
+msgid "Current and maximum hit points"
+msgstr "Aktuelle und maximale Trefferpunkte"
+
+#: g2status.c:643
+msgid "Current and maximum magic energy"
+msgstr "Aktuelle und maximale Zauberkraft"
+
+#: g2status.c:414
+#, c-format
+msgid "Dex: %d"
+msgstr "Ges: %d"
+
+#: g2status.c:702
+msgid "Dex: 9999"
+msgstr "Ges: 9999"
+
+#: g2status.c:702
+msgid "Dexterity"
+msgstr "Geschicklichkeit"
+
+#: g2main.c:116
+msgid "Dip"
+msgstr "Dippen"
+
+#: g2main.c:78
+msgid "Discoveries"
+msgstr "Entdeckungen"
+
+#: g2main.c:261
+msgid ""
+"Do you want to save the current game?\n"
+"If not your current game will be lost!"
+msgstr ""
+"Möchten Sie das aktuelle Spiel speichern?\n"
+"Wenn nicht, geht dieses Spiel verloren!"
+
+#: g2main.c:89
+msgid "Drop"
+msgstr "Fallenlassen"
+
+#: g2main.c:90
+msgid "Drop many"
+msgstr "Mehrere fallenlassen"
+
+#: g2status.c:898
+msgid "Dungeon Level"
+msgstr "Labyrinthstufe"
+
+#: g2status.c:901
+msgid "Dungeon name and depth"
+msgstr "Labyrinthname und Tiefe"
+
+#: g2main.c:92
+msgid "Eat"
+msgstr "Essen"
+
+#: g2status.c:726
+msgid "Elapsed game moves"
+msgstr "vergangene Spielzüge"
+
+#: g2main.c:93
+msgid "Engrave"
+msgstr "Eingravieren"
+
+#: g2main.c:117
+msgid "Enhance skills"
+msgstr "Fertigkeiten verbessern"
+
+#: g2equip.c:183
+msgid "Equipment"
+msgstr "Ausrüstung"
+
+#: g2main.c:109
+msgid "Exchange weapons"
+msgstr "Waffen wechseln"
+
+#: g2main.c:268
+msgid "Exiting...\n"
+msgstr "Beenden...\n"
+
+#: g2status.c:679
+msgid "Exp: "
+msgstr "EP: "
+
+#: g2status.c:452
+#, c-format
+msgid "Exp: %-7ld"
+msgstr "EP: %-7ld"
+
+#: g2status.c:674
+msgid "Experience Level"
+msgstr "Erfahrungsstufe"
+
+#: g2status.c:682
+msgid "Experience Points"
+msgstr "Erfahrungspunkte"
+
+#: g2main.c:80
+msgid "Explain command"
+msgstr "Befehl erklären"
+
+#: g2main.c:110
+msgid "Explore mode"
+msgstr "Entdeckungs-Modus"
+
+#: g2status.c:40
+msgid "Fainted"
+msgstr "ohnmächtig"
+
+#: g2status.c:39
+msgid "Fainting"
+msgstr "ermattend"
+
+#: g2player.c:381
+msgid "Female"
+msgstr "weiblich"
+
+#: g2main.c:94
+msgid "Fire"
+msgstr "_Schießen"
+
+#: g2status.c:26
+msgid "Food Poisoned"
+msgstr "vergiftet"
+
+#: g2main.c:118
+msgid "Force"
+msgstr "Gewalt anwenden"
+
+#: g2main.c:82
+msgid "Go down"
+msgstr "Hinabsteigen"
+
+#: g2main.c:81
+msgid "Go up"
+msgstr "Hinaufsteigen"
+
+#: g2status.c:608
+msgid "Gold pieces"
+msgstr "Goldstücke"
+
+#: g2status.c:635
+msgid "Graphical hit point display"
+msgstr "Grafische Trefferpunktanzeige"
+
+#: g2status.c:652
+msgid "Graphical magic energy display"
+msgstr "Grafische Zauberkraftanzeige"
+
+#: g2menu.c:140
+msgid "Gtk2Hack - Message"
+msgstr "Gtk2Hack - Nachricht"
+
+#: g2main.c:292
+msgid ""
+"Gtk2Hack was developed by Mihael Vrbanec.\n"
+"Window icon and gold icon by David Theis.\n"
+"Other artwork is borrowed from the Qt, X11 and Gnome window ports.\n"
+"\n"
+"Thanks for trying Gtk2Hack."
+msgstr ""
+"Gtk2Hack wurde von Mihael Vrbanec entwickelt.\n"
+"Fenstericon und Goldicon wurden von David Theis gestaltet.\n"
+"Icons und Bilder wurden von den Qt, X11 und Gnome Varianten geliehen.\n"
+"\n"
+"Vielen Dank für Ihr Interesse an Gtk2Hack."
+
+#: g2status.c:25
+msgid "Hallucinating"
+msgstr "halluzinierend"
+
+#: g2status.c:622
+msgid "Hp: "
+msgstr "TP: "
+
+#: g2status.c:371
+#, c-format
+msgid "Hp: %d/%d"
+msgstr "TP: %d/%d"
+
+#: g2status.c:37
+msgid "Hungry"
+msgstr "hungrig"
+
+#: g2main.c:77
+msgid "Identify a map symbol"
+msgstr "Kartensymbol identifizieren"
+
+#: g2status.c:27
+msgid "Ill"
+msgstr "krank"
+
+#: g2status.c:420
+#, c-format
+msgid "Int: %d"
+msgstr "Int: %d"
+
+#: g2status.c:697
+msgid "Int: 9999"
+msgstr "Int: 9999"
+
+#: g2status.c:697
+msgid "Intelligence"
+msgstr "Intelligenz"
+
+#: g2invent.c:98 g2main.c:95 g2menu.c:334
+msgid "Inventory"
+msgstr "Inventar"
+
+#: g2main.c:119
+msgid "Invoke"
+msgstr "Aufrufen"
+
+#: g2main.c:120
+msgid "Jump"
+msgstr "Springen"
+
+#: g2main.c:91
+msgid "Kick"
+msgstr "Treten"
+
+#: g2player.c:405 g2status.c:21
+msgid "Lawful"
+msgstr "rechtschaffen"
+
+#: g2status.c:671
+msgid "Level: "
+msgstr "Stufe: "
+
+#: g2status.c:447
+#, c-format
+msgid "Level: %d"
+msgstr "Stufe: %d"
+
+#: g2main.c:121
+msgid "Loot"
+msgstr "Plündern"
+
+#: g2player.c:377
+msgid "Male"
+msgstr "männlich"
+
+#: g2main.c:122
+msgid "Monster action"
+msgstr "Monster-Handlung"
+
+#: g2main.c:67
+msgid "Move"
+msgstr "Bewegen"
+
+#: g2main.c:88
+msgid "Name monster"
+msgstr "Monster benennen"
+
+#: g2main.c:123
+msgid "Name object"
+msgstr "Objekt benennen"
+
+#: g2player.c:409 g2status.c:22
+msgid "Neutral"
+msgstr "neutral"
+
+#: g2player.c:373 g2player.c:401
+msgid "None selected"
+msgstr "nichts gewählt"
+
+#: g2main.c:124
+msgid "Offer"
+msgstr "Opfern"
+
+#: g2main.c:96
+msgid "Open"
+msgstr "Öffnen"
+
+#: g2main.c:437
+msgid "Options"
+msgstr "Einstellungen"
+
+#: g2status.c:50
+msgid "Overloaded"
+msgstr "Überladen"
+
+#: g2status.c:49
+msgid "Overtaxed"
+msgstr "Überbelastet"
+
+#: g2main.c:97
+msgid "Pay"
+msgstr "Bezahlen"
+
+#: g2menu.c:358
+msgid "Pick any"
+msgstr "Beliebige wählen"
+
+#: g2menu.c:354
+msgid "Pick one"
+msgstr "Eines wählen"
+
+#: g2main.c:113
+msgid "Pick up"
+msgstr "Aufheben"
+
+#: g2player.c:434
+msgid "Player selection"
+msgstr "Spielerauswahl"
+
+#: g2main.c:125
+msgid "Pray"
+msgstr "Beten"
+
+#: g2main.c:100
+msgid "Put in quiver"
+msgstr "In Köcher tun"
+
+#: g2main.c:98
+msgid "Put on accessory"
+msgstr "Accessoir anlegen"
+
+#: g2status.c:639
+msgid "Pw: "
+msgstr "ZK: "
+
+#: g2status.c:384
+#, c-format
+msgid "Pw: %d/%d"
+msgstr "ZK: %d/%d"
+
+#: g2main.c:99
+msgid "Quaff"
+msgstr "Trinken"
+
+#: g2main.c:69
+msgid "Quit Gtk2Hack"
+msgstr "Gtk2Hack beenden"
+
+#: g2player.c:436
+msgid "Random"
+msgstr "Zufällig"
+
+#: g2main.c:101
+msgid "Read"
+msgstr "Lesen"
+
+#: g2main.c:102
+msgid "Remove accessory"
+msgstr "Accessoir entfernen"
+
+#: g2main.c:85
+msgid "Rest"
+msgstr "Rasten"
+
+#: g2main.c:70
+msgid "Ride"
+msgstr "Reiten"
+
+#: g2main.c:126
+msgid "Rub"
+msgstr "Reiben"
+
+#: g2status.c:35
+msgid "Satiated"
+msgstr "gesättigt"
+
+#: g2main.c:435
+msgid "Save game"
+msgstr "Spielstand speichern"
+
+#: g2status.c:730
+msgid "Score: "
+msgstr "Punkte: "
+
+#: g2status.c:469
+#, c-format
+msgid "Score: %ld"
+msgstr "Punkte: %ld"
+
+#: g2main.c:103
+msgid "Search"
+msgstr "Suchen"
+
+#: g2menu.c:250
+msgid "Select"
+msgstr "Auswählen"
+
+#: g2main.c:439
+msgid "Show Help Menu"
+msgstr "Hilfe anzeigen"
+
+#: g2main.c:76
+msgid "Show Nethack version"
+msgstr "Nethack-Version anzeigen"
+
+#: g2main.c:131
+msgid "Show build options"
+msgstr "Softwarekonfiguration anzeigen"
+
+#: g2main.c:132
+msgid "Show character info"
+msgstr "Charakterinfo anzeigen"
+
+#: g2main.c:127
+msgid "Sit"
+msgstr "Sitzen"
+
+#: g2status.c:41
+msgid "Starved"
+msgstr "verhungert"
+
+#: g2status.c:403 g2status.c:409
+#, c-format
+msgid "Str: %d"
+msgstr "Stä: %d"
+
+#: g2status.c:407
+#, c-format
+msgid "Str: 18/%02d"
+msgstr "Stä: 18/%02d"
+
+#: g2status.c:405
+msgid "Str: 18/**"
+msgstr "Stä: 18/**"
+
+#: g2status.c:695
+msgid "Str: 9999"
+msgstr "Stä: 9999"
+
+#: g2status.c:48
+msgid "Strained"
+msgstr "angestrengt"
+
+#: g2status.c:695
+msgid "Strength"
+msgstr "Stärke"
+
+#: g2status.c:47
+msgid "Stressed"
+msgstr "beansprucht"
+
+#: g2status.c:29
+msgid "Stunned"
+msgstr "betäubt"
+
+#: g2main.c:105
+msgid "Take off armor"
+msgstr "Rüstung ausziehen"
+
+#: g2main.c:106
+msgid "Teleport"
+msgstr "Teleportieren"
+
+#: g2main.c:104
+msgid "Throw/Shoot"
+msgstr "Werfen/Schießen"
+
+#: g2status.c:723
+msgid "Time: "
+msgstr "Zeit: "
+
+#: g2status.c:461
+#, c-format
+msgid "Time: %ld"
+msgstr "Zeit; %ld"
+
+#: g2main.c:311
+msgid "Translations"
+msgstr "Übersetzungen"
+
+#: g2main.c:84
+msgid "Travel"
+msgstr "Reisen"
+
+#: g2main.c:128
+msgid "Turn undead"
+msgstr "Untote vertreiben"
+
+#: g2main.c:129
+msgid "Untrap"
+msgstr "Falle entschärfen"
+
+#: g2status.c:38
+msgid "Weak"
+msgstr "schwach"
+
+#: g2main.c:108
+msgid "Wear armor"
+msgstr "Rüstung anziehen"
+
+#: g2main.c:107
+msgid "Wield weapon"
+msgstr "Waffe führen"
+
+#: g2main.c:130
+msgid "Wipe"
+msgstr "Abwischen"
+
+#: g2status.c:423
+#, c-format
+msgid "Wis: %d"
+msgstr "Wei: %d"
+
+#: g2status.c:704
+msgid "Wis: 9999"
+msgstr "Wei: 9999"
+
+#: g2status.c:704
+msgid "Wisdom"
+msgstr "Weisheit"
+
+#: g2main.c:111
+msgid "Zap a wand"
+msgstr "Zauberstab anwenden"
+
+#: g2main.c:71
+msgid "_About"
+msgstr "Über"
+
+#: g2main.c:65
+msgid "_Action"
+msgstr "_Aktionen"
+
+#: g2main.c:63
+msgid "_Edit"
+msgstr "_Bearbeiten"
+
+#: g2main.c:62
+msgid "_File"
+msgstr "_Datei"
+
+#: g2main.c:68
+msgid "_Help"
+msgstr "Hilfe"
+
+#: g2main.c:79
+msgid "_History"
+msgstr "Historie"
+
+#: g2main.c:69
+msgid "_Quit"
+msgstr "Beenden"
+
+#: g2main.c:66
+msgid "_Special"
+msgstr "_Spezielles"
+
+#: g2main.c:76
+msgid "_Version"
+msgstr "_Version"
+
+#: g2main.c:47
+msgid "brazilian portuguese"
+msgstr "brasilianisches portugiesisch"
+
+#: g2main.c:45
+msgid "german"
+msgstr "deutsch"
+
+#: g2main.c:46
+msgid "italian"
+msgstr "italienisch"

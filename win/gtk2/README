@@ -1,0 +1,34 @@
+This document describes my reasons for developing Gtk2Hack and its goal.
+It will serve as a reminder and reference so that I do not lose my focus.
+Later the document might help contributers to understand (all?) design
+decisions made in the process.
+
+1. What is Gtk2Hack?
+Gtk2Hack is a window port for nethack 3.4.x. This means it adds a GUI-frontend
+to the popular ASCII-game.
+
+2. Why did I start developing Gtk2Hack?
+-the Gnome 1 window port got unmaintained and had some missing features (e.g.
+ no permanent inventory, ugly preferences menu and player selection, too big
+ icons in the status window...)
+-with Gnome2/Gtk+2.0 there was a greatly improved new developer platform
+-I wanted to increase my experiences with the C programming language
+-I wanted to get to know the Gnome2/Gtk+2.0 platform
+-fun!
+
+3. What are the goals of Gtk2Hack?
+-to provide a nice and clean frontend for nethack
+-to support most (all?) features and configuration options nethack provides
+-to never get in the way of the player and be completely keyboard controllable
+ like the tty-version
+-to improve the gaming experience by adding some eye-candy (different tilesets),
+ making use of bigger screens and multiple windows to help the player and to
+ more or less integrate in a modern destop environment
+-to help new players play nethack by providing menus and/or buttons for most
+ commands
+
+4. What else could be done?
+-internationalization of nethack?
+-highscore window on demand
+-autotools build system
+-better mouse support (even drag and drop of equipment?)

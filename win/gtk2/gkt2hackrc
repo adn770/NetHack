@@ -1,0 +1,27 @@
+# pixmap_path "<dir 1>:<dir 2>:<dir 3>:..."
+#
+pixmap_path "/usr/local/games/lib/nethackdir:/var/install/usr/local/games/lib/nethackdir"
+
+style "map"
+{
+  bg_pixmap[NORMAL] = "mapbg.xpm"
+  fg[NORMAL] = { 1.0, 0.0, 0.0 }
+  bg[NORMAL] = { 0.3, 0.3, 0.3 }
+  bg[SELECTED] = { 0.5, 0.5, 0.5 }
+  bg[SELECTED] = { 0.5, 0.5, 0.5 }
+}
+
+style "text"
+{
+  font_name = "Sans 8"
+}
+
+style "status"
+{
+  font_name = "Sans 8"
+}
+
+
+widget "*status window.*" style "status"
+widget "*message window.*" style "text"
+widget "*map window.*" style "map"
