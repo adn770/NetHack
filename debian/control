@@ -1,0 +1,13 @@
+Source: nethack
+Section: user/games
+Priority: optional
+Maintainer: Josep Torra <jtorra@uoc.edu>
+Build-Depends: debhelper (>= 4.0.0), libgtk2.0-dev, libosso-dev (>= 1)
+Standards-Version: 3.6.0
+
+Package: nethack
+Architecture: any
+#Pre-Depends: maemo-select-menu-location
+Depends: ${shlibs:Depends}
+Description: NetHack 3.6.x is a dungeon exploration game.
+

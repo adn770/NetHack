@@ -1,0 +1,61 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+export DH_VERBOSE=1
+
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
+endif
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	sh sys/unix/setup.sh sys/unix/hints/maemo4-hildon
+	$(MAKE) spotless
+	touch configure-stamp
+
+build: build-stamp
+
+build-stamp: configure-stamp
+	dh_testdir
+	$(MAKE) all PREFIX=/usr VARDIR=/var/lib/games/nethack
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+	if [ -f Makefile ] ; then $(MAKE) spotless ; fi
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	dh_link
+	$(MAKE) install PREFIX=$(CURDIR)/debian/nethack/usr \
+		VARDIR=$(CURDIR)/debian/nethack/var/lib/games/nethack \
+		SHELLDIR=
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdirs
+	dh_install
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	chgrp -R users debian/nethack/var/lib/games/nethack
+	chmod -R 2775 debian/nethack/var/lib/games/nethack
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-arch
+.PHONY: build clean binary-arch binary install configure

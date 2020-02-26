@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=Nethack
+Exec=/usr/games/nethack
+Icon=pkg_nethack
+X-Window-Icon=pkg_nethack
+X-Window-Icon-Dimmed=pkg_nethack
+#X-Osso-Service=nethack
+X-Osso-Type=application/x-executable
+X-HildonDesk-ShowInToolbar=true
+StartupWMClass=nethack
+Terminal=false
+

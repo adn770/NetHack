@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.nokia.nethack
+Exec=/usr/games/nethack

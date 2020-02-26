@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "$NETHACKOPTIONS" ]; then
+  if [ -e $HOME/.nethackrc ]; then
+    NETHACKOPTIONS=$HOME/.nethackrc
+    export NETHACKOPTIONS
+  else
+    NETHACKOPTIONS=/etc/nethackrc
+    export NETHACKOPTIONS
+  fi
+fi
+
+HACKDIR=/usr/lib/games/nethack
+export HACKDIR
+HACK=$HACKDIR/nethack
+
+cd $HACKDIR
+exec $HACK "$@"

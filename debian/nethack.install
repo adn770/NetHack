@@ -1,0 +1,8 @@
+debian/extra/nethackrc                  etc
+debian/extra/nethack                    usr/games
+debian/extra/com.nokia.nethack.service  usr/share/applications/hildon
+debian/extra/nethack.desktop            usr/share/applications/hildon
+debian/extra/16/pkg_nethack.png         usr/share/icons/hicolor/16x16/hildon
+debian/extra/26/pkg_nethack.png         usr/share/icons/hicolor/26x26/hildon
+debian/extra/40/pkg_nethack.png         usr/share/icons/hicolor/40x40/hildon
+debian/extra/64/pkg_nethack.png         usr/share/icons/hicolor/scalable/hildon

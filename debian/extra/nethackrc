@@ -1,0 +1,18 @@
+#
+# Nethack configuration file.
+#
+# Please read the Guidebook in /usr/share/doc/nethack or at www.nethack.org.
+#
+# Naming this file $(HOME)/.nethackrc or setting the environment
+# variable NETHACKOPTIONS to point to its full path name elsewhere tells
+# NetHack to use X11 windowing (provided the executable was compiled with
+# that ability).
+#
+
+# options for maemo:
+OPTIONS=number_pad,hilite_pet,toptenwin,confirm,rest_on_space
+OPTIONS=noautopickup,safe_pet,showexp
+# And force question about the player name
+OPTIONS=name:player
+OPTIONS=tile_file:ascii.png,tile_width=16,tile_height=24
+#OPTIONS=tile_file:tiles32.png,tile_width=32,tile_height=32
