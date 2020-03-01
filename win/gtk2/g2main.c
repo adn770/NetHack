@@ -38,6 +38,27 @@
 
 #define RC_FILE "gtk2hackrc"
 
+static void g2_zoom_in (GtkWidget * app, gpointer data);
+static void g2_zoom_out (GtkWidget * app, gpointer data);
+static void g2_exit (GtkWidget * app, gpointer data);
+static void g2_show_about (GtkWidget * app, gpointer data);
+
+typedef struct
+{
+  gchar *name;
+  gchar *label;
+  gchar *tooltip;
+  gchar *accel;
+  gchar command;
+  gchar *stock_id;
+} G2ActionEntry;
+
+typedef struct
+{
+  const gchar *stock_id;
+  gconstpointer inline_data;
+} G2InlinedIcon;
+
 #define G2_MAXWINDOWS   20
 
 typedef struct
@@ -48,11 +69,6 @@ typedef struct
 
 static G2Window g2_windows[G2_MAXWINDOWS] = { 0, };
 
-static void g2_zoom_in (GtkWidget * app, gpointer data);
-static void g2_zoom_out (GtkWidget * app, gpointer data);
-static void g2_exit (GtkWidget * app, gpointer data);
-static void g2_show_about (GtkWidget * app, gpointer data);
-
 static GtkWidget *mainWin;
 static GtkWidget *mapWin;
 static GtkWidget *messageWin;
@@ -62,18 +78,6 @@ static GtkWidget *statusWin;
 #ifdef MINIPAD
 static GtkWidget *padWin;
 #endif
-
-static char *translators[] = {
-  "Mihael Vrbanec <miq@users.sourceforge.net>",
-  "Paolo M. <qualsiasi@qualsiasi.net>",
-  "Paulo Henrique Cabral <paulo@mudvayne.com.br>",
-};
-
-static char *linguas[] = {
-  N_("german"),
-  N_("italian"),
-  N_("brazilian portuguese"),
-};
 
 #if GTK_CHECK_VERSION(2,4,0)
 
@@ -150,11 +154,7 @@ static GtkStockItem hack_stock_items[] = {
   {HACK_STOCK_DIR_SELF, N_(""), 0, '.', GTK_HACK_DOMAIN},
 };
 
-static struct
-{
-  const gchar *stock_id;
-  gconstpointer inline_data;
-} hack_stock_button_pixbufs[] = {
+static G2InlinedIcon hack_stock_button_pixbufs[] = {
   {HACK_STOCK_EAT, stock_eat_24},
   {HACK_STOCK_INV, stock_inv_24},
   {HACK_STOCK_KICK, stock_kick_24},
@@ -176,11 +176,7 @@ static struct
   {HACK_STOCK_SEARCH, stock_search_24},
 };
 
-static struct
-{
-  const gchar *stock_id;
-  gconstpointer inline_data;
-} hack_stock_menu_pixbufs[] = {
+static G2InlinedIcon hack_stock_menu_pixbufs[] = {
   {HACK_STOCK_EAT, stock_eat_16},
   {HACK_STOCK_INV, stock_inv_16},
   {HACK_STOCK_KICK, stock_kick_16},
@@ -201,7 +197,7 @@ static struct
  * You don't need to call this function as hack_ui_init() already does
  * this for you.
  */
-void
+static void
 hack_stock_init (void)
 {
   static gboolean initialized = FALSE;
@@ -231,16 +227,6 @@ hack_stock_init (void)
 
   initialized = TRUE;
 }
-
-typedef struct
-{
-  gchar *name;
-  gchar *label;
-  gchar *tooltip;
-  gchar *accel;
-  gchar command;
-  gchar *stock_id;
-} G2ActionEntry;
 
 /* Normal items */
 static GtkActionEntry entries[] = {
@@ -313,7 +299,8 @@ static G2ActionEntry commands[] = {
   {"Chat", N_("Chat"), NULL, "<alt>c", META_BIT | GDK_c, NULL},
   {"Dip", N_("Dip"), NULL, "<alt>d", META_BIT | GDK_d, NULL},
   {"Enhance", N_("Enhance skills"), NULL, "<alt>e", META_BIT | GDK_e, NULL},
-  {"Force", N_("Force"), NULL, "<alt>f", META_BIT | GDK_f, GTK_STOCK_PREFERENCES},
+  {"Force", N_("Force"), NULL, "<alt>f", META_BIT | GDK_f,
+      GTK_STOCK_PREFERENCES},
   {"Invoke", N_("Invoke"), NULL, "<alt>i", META_BIT | GDK_i, NULL},
   {"Jump", N_("Jump"), NULL, "<alt>j", META_BIT | GDK_j, NULL},
   {"Loot", N_("Loot"), NULL, "<alt>l", META_BIT | GDK_l, NULL},
@@ -338,7 +325,6 @@ static G2ActionEntry commands[] = {
   {"Help", N_("Show Help Menu"), NULL, NULL, GDK_question, GTK_STOCK_HELP},
 };
 
-
 static GtkRadioActionEntry tileset_entries[] = {
   {"Default", NULL, N_("_Default"), NULL, "Default",
       TILESET_DEFAULT},
@@ -350,6 +336,7 @@ static GtkRadioActionEntry tileset_entries[] = {
 
 static guint n_tileset_entries = G_N_ELEMENTS (tileset_entries);
 
+/* *INDENT-OFF* */
 static const char *uiDescription =
     "<ui>"
     "  <menubar name='MainMenu'>"
@@ -504,8 +491,9 @@ static const char *uiDescription =
     "    <toolitem action='ZoomIn'/>"
     "    <toolitem action='ZoomOut'/>"
 #endif
-    "  </toolbar>" "</ui>";
-
+    "  </toolbar>"
+    "</ui>";
+/* *INDENT-ON* */
 
 static void
 command_activated (GtkWidget * action, gpointer command)
@@ -550,7 +538,6 @@ static void
 g2_zoom_in (GtkWidget * app, gpointer data)
 {
   gdouble res;
-
   g_signal_emit_by_name (G_OBJECT (mapWin), "rescale", +0.25, &res, NULL);
 }
 
@@ -558,7 +545,6 @@ static void
 g2_zoom_out (GtkWidget * app, gpointer data)
 {
   gdouble res;
-
   g_signal_emit_by_name (G_OBJECT (mapWin), "rescale", -0.25, &res, NULL);
 }
 
@@ -595,20 +581,16 @@ g2_show_about (GtkWidget * app, gpointer data)
 {
   gint response;
   gint i;
-  gchar *trans;
   GtkWidget *aboutDialog;
   GtkWidget *vbox;
-  GtkWidget *tabContent;
-  GtkWidget *notebook;
   GtkWidget *label;
 
-  aboutDialog = gtk_dialog_new_with_buttons (_("About Gtk2Hack"),
+  aboutDialog = gtk_dialog_new_with_buttons (_("About nethack"),
       GTK_WINDOW (mainWin),
       GTK_DIALOG_MODAL |
       GTK_DIALOG_NO_SEPARATOR, GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
   vbox = gtk_vbox_new (FALSE, 5);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
-  notebook = gtk_notebook_new ();
   label = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (label),
       "<b><big>nethack " VERSION "</big></b>");
@@ -618,30 +600,8 @@ g2_show_about (GtkWidget * app, gpointer data)
           "Window icon and gold icon by David Theis.\n"
           "Other artwork is borrowed from the Qt, X11 and Gnome window ports.\n\n"
           "Thanks for trying Gtk2Hack."));
-  tabContent = gtk_vbox_new (FALSE, 5);
-  gtk_container_set_border_width (GTK_CONTAINER (tabContent), 5);
-  gtk_box_pack_start (GTK_BOX (tabContent), label, FALSE, FALSE, 0);
-  gtk_notebook_append_page (GTK_NOTEBOOK (notebook), tabContent,
-      gtk_label_new (_("Credits")));
-  tabContent = gtk_vbox_new (FALSE, 5);
-  gtk_container_set_border_width (GTK_CONTAINER (tabContent), 5);
 
-  trans = g_strdup ("");
-  for (i = 0; linguas[i] != NULL; i++) {
-    gchar *temp =
-        g_strconcat (trans, translators[i], " (", _(linguas[i]), ")\n", NULL);
-    g_free (trans);
-    trans = temp;
-  }
-
-  label = gtk_label_new (trans);
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.0f);
-  gtk_box_pack_start (GTK_BOX (tabContent), label, FALSE, FALSE, 0);
-  g_free (trans);
-  gtk_notebook_append_page (GTK_NOTEBOOK (notebook), tabContent,
-      gtk_label_new (_("Translations")));
-
-  gtk_box_pack_start (GTK_BOX (vbox), notebook, FALSE, FALSE, 10);
+  gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 10);
   gtk_container_add (GTK_CONTAINER (GTK_DIALOG (aboutDialog)->vbox), vbox);
   gtk_widget_show_all (aboutDialog);
   response = gtk_dialog_run (GTK_DIALOG (aboutDialog));
@@ -727,7 +687,6 @@ g2_move_keys_with_numpad (guint keyval, gint * key)
   return TRUE;
 }
 
-
 /** Returns true if this key is a valid input character.
  *  Valid are all ascii characters plus some.
  */
@@ -801,16 +760,14 @@ g2_main_key_press_event (GtkWidget * widget, GdkEventKey * event, gpointer data)
   return TRUE;
 }
 
+#if GTK_CHECK_VERSION(2,4,0)
+#if defined(HILDON) && (defined(MAEMO2) || defined(MAEMO4))
 static void
 set_expand (GtkWidget * child, GtkWidget * parent)
 {
   gtk_container_child_set (GTK_CONTAINER (parent), child, "expand", TRUE, NULL);
 }
 
-
-
-#if GTK_CHECK_VERSION(2,4,0)
-#if defined(HILDON) && (defined(MAEMO2) || defined(MAEMO4))
 static void
 add_menu_and_toolbar (HildonWindow * view)
 #else
@@ -1035,8 +992,6 @@ g2_init_main_window (int *argcp, char **argv)
   gtk_paned_pack2 (GTK_PANED (pane2), bottomBox, FALSE, FALSE);
   gtk_box_pack_start (GTK_BOX (mainBox), pane2, TRUE, TRUE, 0);
 
-//  gtk_paned_set_position( GTK_PANED(pane1), 600 );
-//  gtk_paned_set_position( GTK_PANED(pane2), 50 );
 #if defined(HILDON) && (defined(MAEMO2) || defined(MAEMO4))
   g_signal_connect (G_OBJECT (mapWin), "key_press_event",
       G_CALLBACK (g2_main_key_press_event), NULL);
